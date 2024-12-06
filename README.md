@@ -1,6 +1,6 @@
 # nodeban
 
-    *NodeJS Project Setup CLI*
+    NodeJS Project Setup CLI
 
 1. [Description](#description)
    The NodeJS Project Setup CLI is a command-line tool designed to simplify the process of initializing and scaffolding a new Node.js project. It helps you save time by creating a complete, structured project with a professional folder layout, boilerplate code, and essential dependencies.
