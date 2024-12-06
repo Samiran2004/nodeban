@@ -13,16 +13,15 @@
    username: '',
    password: '',
    }
-
+   ```
 
 and add port & dbDriver to the .env file.
-   ```
 
-   ```bash
-   port =
-   dbDriver =
+```
+port =
+dbDriver =
 
-   ```
+```
 
 2. [Features](#Features)
    Generates a ready-to-use Node.js project structure:
@@ -39,11 +38,14 @@ and add port & dbDriver to the .env file.
 
 3. [Installation](#Installation)
    To install the CLI globally.
+
    ```bash
    npm install -g nodeban
    create-node-project my-new-project
    npm install
    npm start
+
+   ```
 
 4. [Default Folder Structured](#Structured)
    my-new-project/
