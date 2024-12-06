@@ -1,6 +1,6 @@
 # nodeban
 
-    NodeJS Project Setup CLI
+    *NodeJS Project Setup CLI*
 
 1. [Description](#description)
    The NodeJS Project Setup CLI is a command-line tool designed to simplify the process of initializing and scaffolding a new Node.js project. It helps you save time by creating a complete, structured project with a professional folder layout, boilerplate code, and essential dependencies.
@@ -9,17 +9,16 @@
    Just Add your mongo username and password.
 
    auth: {
-     username: '<your-username>',
-     password: '<your-password>',
+   username: '',
+   password: '',
    }
 
-    and add port & dbDriver to the .env file.
+   and add port & dbDriver to the .env file.
 
-    port = <desired-port>
-    dbDriver = <your-database-connection-string>
+   port =
+   dbDriver =
 
-
-    finally your db will be connected .
+   finally your db will be connected .
 
 2. [Features](#Features)
    Generates a ready-to-use Node.js project structure:
@@ -65,12 +64,11 @@
 
 5. [.env](#env)
 
-   add these to the .env file 
+   add these to the .env file
 
-
-| Option    | Description           | Default     |
-| --------- | --------------------- | ----------- |
-| `port`    | Database port address | `localhost` |
-| `dbDriver`| Database string       | `3306`      |
+| Option     | Description           | Default     |
+| ---------- | --------------------- | ----------- |
+| `port`     | Database port address | `localhost` |
+| `dbDriver` | Database string       | `3306`      |
 
 <!-- ![Logo](./assets/html.png) -->
