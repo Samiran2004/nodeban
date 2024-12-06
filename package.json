@@ -12,11 +12,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": ["nodejs", "project", "scaffolding", "setup", "cli"],
-  "author": "Your Name <your.email@example.com>",
+  "author": "Your Name deban",
   "license": "ISC",
   "description": "A CLI tool to create a Node.js project structure.",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/deban07/nodeban"
   }
 }
