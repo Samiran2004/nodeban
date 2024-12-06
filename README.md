@@ -40,12 +40,9 @@
    To install the CLI globally.
    ```bash
    npm install -g nodeban
-
-npm install -g nodeban
-
-npm install
-
-npm start
+   create-node-project my-new-project
+   npm install
+   npm start
 
 4. [Default Folder Structured](#Structured)
    my-new-project/
