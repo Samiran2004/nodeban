@@ -8,6 +8,8 @@
    No need to create server , servers are already created .all the packages are also preinstalled.
    Just Add your mongo username and password.
 
+   open src/index.js
+
    ```bash
    auth: {
    username: '',
