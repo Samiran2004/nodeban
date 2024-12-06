@@ -1,4 +1,4 @@
-# nodeban
+# node-project-folder
 
     NodeJS Project Setup CLI
 
@@ -42,7 +42,7 @@ dbDriver =
    To install the CLI globally.
 
    ```bash
-   npm install -g nodeban
+   npm install -g node-project-folder
    create-node-project my-new-project
    npm install
    npm start
