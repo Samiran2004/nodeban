@@ -17,7 +17,7 @@
    and add port & dbDriver to the .env file.
    ```
 
-`````bash
+    ```bash
    port =
    dbDriver =
 
