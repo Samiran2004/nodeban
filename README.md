@@ -8,17 +8,17 @@
    No need to create server , servers are already created .all the packages are also preinstalled.
    Just Add your mongo username and password.
 
+    ```bash
    auth: {
    username: '',
    password: '',
    }
 
    and add port & dbDriver to the .env file.
-
+    ```bash
    port =
    dbDriver =
 
-   finally your db will be connected .
 
 2. [Features](#Features)
    Generates a ready-to-use Node.js project structure:
@@ -34,13 +34,20 @@
    Includes example routes, controllers, and models to kickstart development.
 
 3. [Installation](#Installation)
-   To install the CLI globally:
+   To install the CLI globally, run:
 
-   CLI npm install -g nodejs-project-setup
+    ```bash
+    npm install -g nodeban
 
-   After installation, run the following command to create a new Node.js project:
+    ```bash
+    create-node-project my-new-project
 
-   create-node-project my-new-project
+    ```bash
+    npm install
+
+    ```bash
+    npm start
+
 
 4. [Default Folder Structured](#Structured)
    my-new-project/
@@ -72,3 +79,4 @@
 | `dbDriver` | Database string       | `3306`      |
 
 <!-- ![Logo](./assets/html.png) -->
+```
