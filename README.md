@@ -48,24 +48,10 @@ dbDriver =
    ```
 
 4. [Default Folder Structured](#Structured)
-   my-new-project/
-   ├── src/
-   │ ├── controllers/
-   │ │
-   │ ├── models/
-   │ │
-   │ ├── routes/
-   │ │
-   │ ├── utils/
-   │ ├── index.js
-   ├── public/
-   │ ├── css/
-   │ ├── js/
-   │ └── images/
-   ├── .env
-   ├── .gitignore
-   ├── package.json
-   ├── README.md
+   my-new-project
+   # ![Logo](./assets/folder.png)
+
+
 
 5. [.env](#env)
 
@@ -76,8 +62,4 @@ dbDriver =
 | `port`     | Database port address | `localhost` |
 | `dbDriver` | Database string       | `3306`      |
 
-# <!-- ![Logo](./assets/html.png) -->
 
-```
-
-```
