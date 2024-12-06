@@ -43,7 +43,7 @@ dbDriver =
 
    ```bash
    npm install -g node-project-folder
-   create-node-project my-new-project
+   npx create-node-project my-new-project
    npm install
    npm start
 
