@@ -14,7 +14,8 @@
    password: '',
    }
 
-   and add port & dbDriver to the .env file.
+
+and add port & dbDriver to the .env file.
    ```
 
    ```bash
