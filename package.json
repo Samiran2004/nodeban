@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-project-setup",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": {
+    "create-node-project": "index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["nodejs", "project", "scaffolding", "setup", "cli"],
+  "author": "Your Name <your.email@example.com>",
+  "license": "ISC",
+  "description": "A CLI tool to create a Node.js project structure.",
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
