@@ -20,8 +20,8 @@
 and add port & dbDriver to the .env file.
 
 ```
-port =
-dbDriver =
+PORT =
+DBSTRING =
 
 ```
 
@@ -61,7 +61,5 @@ dbDriver =
 
 | Option     | Description           | Default     |
 | ---------- | --------------------- | ----------- |
-| `port`     | Database port address | `localhost` |
-| `dbDriver` | Database string       | `3306`      |
-
-
+| `PORT`     | Database port address | `localhost` |
+| `DBSTRING` | Database string       | `/mongo`    |
