@@ -3,9 +3,10 @@
 const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
+const readline = require('readline');
 
-// Define the folder structure
-const folders = [
+// Folder structure for JavaScript project
+const jsfolders = [
   "src",
   "src/controllers",
   "src/models",
@@ -17,8 +18,20 @@ const folders = [
   "public/images",
 ];
 
-// Define the files to create
-const files = [
+// Folder structure for TypeScript project
+const tsfolders = [
+  "src",
+  "src/controllers",
+  "src/models",
+  "src/routes",
+  "src/utils",
+  "src/config",
+  "src/types",
+  "src/services",
+];
+
+// Define the files to create JavaScript project
+const jsfiles = [
   { name: ".env", content: "" },
   {
     name: "package.json",
@@ -60,21 +73,15 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const http = require('http');
 
-
 const app = express();
 const server = http.createServer(app);
-
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
-// const apiRouter = require('./route/apiRoute');
-// app.use('/api', apiRouter);
-
 const port = process.env.PORT;
 const dbDriver = process.env.DBSTRING
-
 
 let option = {
   auth: {
@@ -95,15 +102,103 @@ mongoose.connect(dbDriver, option)
   .catch(error => {
     console.error('Error connecting to database:', error);
   });
-
 `,
   },
 ];
 
+// Define the files to create TypeScript project
+const tsfiles = [
+  {
+    name: ".env",
+    content: "",
+  },
+  {
+    name: "package.json",
+    content: (projectName) =>
+      JSON.stringify(
+        {
+          name: projectName,
+          version: "1.0.0",
+          main: "src/index.ts",
+          scripts: {
+            start: "nodemon src/index.ts",
+            build: "tsc -p .",
+          },
+          dependencies: {
+            express: "^4.17.1",
+            mongoose: "^6.0.0",
+            "body-parser": "^1.19.0",
+            cors: "^2.8.5",
+            "socket.io": "^4.0.1",
+            dotenv: "^10.0.0",
+            nodemon: "^3.0.2",
+          },
+          devDependencies: {
+            "@types/express": "^4.17.12",
+            "@types/mongoose": "^5.11.97",
+            "@types/body-parser": "^1.19.0",
+            "@types/cors": "^2.8.12",
+            "@types/socket.io": "^2.1.14",
+            "@types/node": "^16.7.13",
+            typescript: "^4.4.3",
+          },
+        },
+        null,
+        2
+      ),
+  },
+  {
+    name: "tsconfig.json",
+    content: JSON.stringify(
+      {
+        compilerOptions: {
+          target: "es6",
+          module: "commonjs",
+          outDir: "./dist",
+          rootDir: "./src",
+          strict: true,
+          esModuleInterop: true,
+        },
+        include: ["src/**/*.ts"],
+        exclude: ["node_modules"],
+      },
+      null,
+      2
+    ),
+  },
+  {
+    name: "README.md",
+    content: "# New Project\n\nGenerated with nodejs-project-setup.",
+  },
+  {
+    name: ".gitignore",
+    content: "node_modules/\n.env\n",
+  },
+  {
+    name: "src/index.ts",
+    content: `import express from 'express';
+import dotenv from 'dotenv';
+dotenv.config();
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+
+app.listen(PORT, () => {
+  console.log(\`Server is running on http://localhost:\${PORT}\`);
+});`,
+  },
+];
+
 // Function to create the folder and file structure
-function createStructure(basePath) {
-  // Extract project name from the base path
+function createStructure(basePath, isTypescript) {
   const projectName = path.basename(basePath);
+  const folders = isTypescript ? tsfolders : jsfolders;
+  const files = isTypescript ? tsfiles : jsfiles;
 
   // Create folders
   folders.forEach((folder) => {
@@ -140,6 +235,16 @@ function createStructure(basePath) {
 // Get the project path from the command-line argument
 const projectPath = process.argv[2] || ".";
 
-// Create the project structure
-createStructure(projectPath);
+// Prompt user for language choice
+const rlInterface = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rlInterface.question("Do you want to create a JavaScript or TypeScript project? (js/ts): ", (answer) => {
+  const isTypeScript = answer.toLowerCase() === "ts";
+  createStructure(path.resolve(projectPath), isTypeScript);
+  rlInterface.close();
+});
+
 console.log(`Project setup completed at ${path.resolve(projectPath)}.`);
