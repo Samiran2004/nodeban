@@ -1,0 +1,34 @@
+# Create a GitHub Actions Workflow File
+# Create a new GitHub Actions workflow: In your repository, create a new directory called .github/workflows if it doesn’t already exist.
+
+name: Update README with Contributors
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/README.md'
+  pull_request:
+    types: [opened, synchronize, closed]
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Add contributors to README
+        run: |
+          echo "Updating README.md with contributors..."
+          CONVERTED_CONTRIBUTORS=$(git log --format='%aN' | sort | uniq)
+          CONTRIBUTORS=$(echo "$CONVERTED_CONTRIBUTORS" | awk '{print "- " $0}')
+          echo "Contributors list updated."
+          
+          # Get the current README file and append new contributors
+          sed -i "/<!-- CONTRIBUTORS_LIST -->/c\\$CONTRIBUTORS" README.md
+          
+          git add README.md
+          git commit -m "Update README.md with contributors"
+          git push

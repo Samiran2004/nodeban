@@ -63,3 +63,13 @@ DBSTRING =
 | ---------- | --------------------- | ----------- |
 | `PORT`     | Database port address | `localhost` |
 | `DBSTRING` | Database string       | `/mongo`    |
+
+# Contributors
+Thanks to the following people who contributed to this project:
+
+<!-- CONTRIBUTORS_LIST -->
+
+## Badges
+[![Your Badge](https://img.shields.io/badge/badge-name-blue)](link-to-badge)
+
+![Contributors](https://img.shields.io/github/contributors/deban07/nodeban)
