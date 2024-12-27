@@ -28,6 +28,9 @@ const tsfolders = [
   "src/config",
   "src/types",
   "src/services",
+  "src/middlewares",
+  "src/routes/public",
+  "src/routes/private",
 ];
 
 // Define the files to create JavaScript project
@@ -245,6 +248,5 @@ rlInterface.question("Do you want to create a JavaScript or TypeScript project? 
   const isTypeScript = answer.toLowerCase() === "ts";
   createStructure(path.resolve(projectPath), isTypeScript);
   rlInterface.close();
+  console.log(`Project setup completed at ${path.resolve(projectPath)}.`);
 });
-
-console.log(`Project setup completed at ${path.resolve(projectPath)}.`);
