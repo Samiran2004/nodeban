@@ -17,7 +17,6 @@ const jsfolders = [
   "src/middlewares",
   "src/routes/public",
   "src/routes/private",
-  "src/utils",
   "src/tests",
   "public",
   "public/css",
