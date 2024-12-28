@@ -51,11 +51,11 @@ DBSTRING =
 
 4. [Default Folder Structured (JavaScript)](#Structured)
    my-new-project
-   # ![Logo](./assets/folder.png)
+   # ![Logo](./assets/JS_Folder.png)
 
 5. [Default Folder Structured (TypeScript)](#Structured)
    my-new-project
-   # ![Logo](./assets/Folder_TS.png)
+   # ![Logo](./assets/TS_Folder.png)
 
 
 

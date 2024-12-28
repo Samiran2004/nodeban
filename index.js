@@ -12,7 +12,7 @@ const jsfolders = [
   "src/models",
   "src/routes",
   "src/utils",
-  "src/configs",
+  "src/config",
   "src/services",
   "src/middlewares",
   "src/routes/public",
