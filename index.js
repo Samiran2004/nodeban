@@ -38,6 +38,10 @@ const tsfolders = [
   "src/tests",
   "src/routes/public",
   "src/routes/private",
+  "public",
+  "public/css",
+  "public/js",
+  "public/images",
 ];
 
 // Define the files to create JavaScript project
