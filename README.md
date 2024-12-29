@@ -49,9 +49,13 @@ DBSTRING =
 
    ```
 
-4. [Default Folder Structured](#Structured)
+4. [Default Folder Structured (JavaScript)](#Structured)
    my-new-project
-   # ![Logo](./assets/folder.png)
+   # ![Logo](./assets/Js_Folder.png)
+
+4. [Default Folder Structured (TypeScript)](#Structured)
+   my-new-project
+   # ![Logo](./assets/Ts_Folder.png)
 
 
 
