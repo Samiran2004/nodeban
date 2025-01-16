@@ -44,6 +44,12 @@ const tsfolders = [
   "public/images",
 ];
 
+const jsContentFilePath = path.join(__dirname, './assets/Js_File_Boilerplate.txt');
+const readJsBoiler = fs.readFileSync(jsContentFilePath, 'utf-8');
+
+const tsContentFilePath = path.join(__dirname, './assets/Ts_File_Boilerplate.txt');
+const readTsBoiler = fs.readFileSync(tsContentFilePath, 'utf-8');
+
 // Define the files to create JavaScript project
 const jsfiles = [
   { name: ".env", content: "" },
@@ -79,44 +85,7 @@ const jsfiles = [
   { name: ".gitignore", content: "node_modules/\n.env\n" },
   {
     name: "src/index.js",
-    content: `const express = require('express');
-require('dotenv').config();
-const mongoose = require('mongoose');
-mongoose.set('strictQuery', true);
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const http = require('http');
-
-const app = express();
-const server = http.createServer(app);
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(cors());
-
-const port = process.env.PORT;
-const dbDriver = process.env.DBSTRING
-
-let option = {
-  auth: {
-    username: '',
-    password: '',
-  },
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-};
-
-mongoose.connect(dbDriver, option)
-  .then(result => {
-    server.listen(port, () => {
-      console.log("Server running on port: http://localhost:");
-      console.log('Database connected');
-    });
-  })
-  .catch(error => {
-    console.error('Error connecting to database:', error);
-  });
-`,
+    content: readJsBoiler,
   },
 ];
 
@@ -152,7 +121,7 @@ const tsfiles = [
             "@types/mongoose": "^5.11.97",
             "@types/body-parser": "^1.19.0",
             "@types/cors": "^2.8.12",
-            "@types/socket.io": "^2.1.14",
+            "@types/socket.io": "^2.0.0",
             "@types/node": "^16.7.13",
             typescript: "^4.4.3",
           },
@@ -190,21 +159,7 @@ const tsfiles = [
   },
   {
     name: "src/index.ts",
-    content: `import express from 'express';
-import dotenv from 'dotenv';
-dotenv.config();
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.use(express.json());
-
-app.get('/', (req, res) => {
-    res.send('Hello, World!');
-});
-
-app.listen(PORT, () => {
-  console.log(\`Server is running on http://localhost:\${PORT}\`);
-});`,
+    content: readTsBoiler,
   },
 ];
 

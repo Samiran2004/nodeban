@@ -44,7 +44,6 @@ DBSTRING =
    ```bash
    npm install -g node-project-folder
    npx create-node-project my-new-project
-   npm install
    npm start
 
    ```
